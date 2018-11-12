@@ -1,0 +1,3 @@
+﻿  BankSystem_test.cpp
+d:\bank_system\banksystem_test\banksystem_test\basic_func.h(77): warning C4172: 返回局部变量或临时变量的地址: sinfo
+  BankSystem_test.vcxproj -> D:\bank_system\BankSystem_test\Debug\BankSystem_test.exe
