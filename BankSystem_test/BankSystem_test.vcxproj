@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="basic_func.h" />
+    <ClInclude Include="func.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>

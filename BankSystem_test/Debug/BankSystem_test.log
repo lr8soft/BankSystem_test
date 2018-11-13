@@ -1,3 +1,5 @@
 ﻿  BankSystem_test.cpp
+d:\bank_system\banksystem_test\banksystem_test\func.h(81): warning C4474: printf: 格式字符串中传递的参数太多
+  d:\bank_system\banksystem_test\banksystem_test\func.h(81): note: 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
 d:\bank_system\banksystem_test\banksystem_test\basic_func.h(77): warning C4172: 返回局部变量或临时变量的地址: sinfo
   BankSystem_test.vcxproj -> D:\bank_system\BankSystem_test\Debug\BankSystem_test.exe

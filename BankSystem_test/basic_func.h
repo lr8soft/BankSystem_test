@@ -7,7 +7,7 @@
 #define MAX_LEN 5
 typedef struct {
 	int cardnum[3] = {0,0,0};
-	int money[3] = {0,0,0};
+	long double money[3] = {0.0,0.0,0.0};
 	char name[7];
 	char pwd[7];
 }PData;
@@ -94,6 +94,15 @@ int DeleteAccount(SInfo *head, int cardnum) {
 	}
 	return 0;
 }
+SInfo *SInfoInit(SInfo *head) {
+	PData temp;
+	temp.cardnum[0] = -8888888;
+	temp.money[0] = -88888888.0;
+	strcpy(temp.name, "FILLED");
+	strcpy(temp.pwd, "ABCDEF");
+	head = AddToList(head, temp);
+	return head;
+}
 int InfoLen(SInfo *head) {
 	int len = 0;
 	SInfo *htemp;
@@ -109,7 +118,7 @@ void ShowAllInfo(SInfo *head) {
 	htemp = head;
 	while (htemp) {
 		printf("ÐÅÏ¢:[(%d,%d,%d),%s,%s]",htemp->data.cardnum[0], htemp->data.cardnum[1], htemp->data.cardnum[2], htemp->data.name, htemp->data.pwd);
-		printf("£¤:[%d,%d,%d]\n",htemp->data.money[0], htemp->data.money[1], htemp->data.money[2]);
+		printf("£¤:[%lf,%lf,%lf]\n",htemp->data.money[0], htemp->data.money[1], htemp->data.money[2]);
 		htemp = htemp->nextInfo;
 	}
 }
@@ -122,7 +131,7 @@ int SaveInfo(SInfo *head) {
 	while (htemp) {
 		for (i = 0; i < 3;i++) {
 			fwrite(&htemp->data.cardnum[i],sizeof(int),1,fp);
-			fwrite(&htemp->data.money[i], sizeof(int), 1, fp);
+			fwrite(&htemp->data.money[i], sizeof(long double), 1, fp);
 		}
 		fwrite(htemp->data.name,sizeof(htemp->data.name),1,fp);
 		fwrite(htemp->data.pwd, sizeof(htemp->data.pwd), 1, fp);
@@ -141,7 +150,7 @@ SInfo *ReadInfo() {
 	for (j = 0; j < listlen;j++) {
 		for (i = 0; i < 3; i++) {
 			fread(&tdata.cardnum[i], sizeof(int), 1, fp);
-			fread(&tdata.money[i], sizeof(int), 1, fp);
+			fread(&tdata.money[i], sizeof(long double), 1, fp);
 		}
 		fread(tdata.name, sizeof(tdata.name), 1, fp);
 		fread(tdata.pwd, sizeof(tdata.pwd), 1, fp);
