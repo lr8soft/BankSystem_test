@@ -97,7 +97,7 @@ int AccountCancellation(SInfo *head,char name[],char pwd[],int card) {
 	}
 }
 int AccountDeposit(SInfo *head,int card,long double money) {
-	int temp = Deposit(head,card,money);
+	int temp = DepositMoney(head,card,money);
 	switch (temp)
 	{
 		case -1:
@@ -152,12 +152,16 @@ getRandCard:
 	if (temp != NULL) {
 		goto getRandCard;
 	}
+	if (htemp==NULL) {
+		printf("无法找到该用户！请检查卡号是否输入错误！\n");
+		return 0;
+	}
 	for (i = 0; i < 3;i++) {
 		if (htemp->data.cardnum[i] == 0) remain++;
 	}
 	if (remain>0) {
 		htemp->data.cardnum[3 - remain] = card_num;
-		printf("开卡成功！卡号为&d",card_num);
+		printf("开卡成功！卡号为%d",card_num);
 		return 1;
 	}else {
 		printf("已达最大三张卡的份额！开卡失败！\n");

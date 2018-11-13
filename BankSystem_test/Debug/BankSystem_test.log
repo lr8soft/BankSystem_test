@@ -2,8 +2,6 @@
 d:\bank_system\banksystem_test\banksystem_test\func.h(82): warning C4474: printf: 格式字符串中传递的参数太多
   d:\bank_system\banksystem_test\banksystem_test\func.h(82): note: 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
 d:\bank_system\banksystem_test\banksystem_test\func.h(148): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-d:\bank_system\banksystem_test\banksystem_test\func.h(160): warning C4474: printf: 格式字符串中传递的参数太多
-  d:\bank_system\banksystem_test\banksystem_test\func.h(160): note: 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
-d:\bank_system\banksystem_test\banksystem_test\basic_func.h(90): warning C4172: 返回局部变量或临时变量的地址: sinfo
+d:\bank_system\banksystem_test\banksystem_test\basic_func.h(89): warning C4172: 返回局部变量或临时变量的地址: sinfo
 d:\bank_system\banksystem_test\banksystem_test\basic_func.h(171): warning C4715: “DrawMoney”: 不是所有的控件路径都返回值
   BankSystem_test.vcxproj -> D:\bank_system\BankSystem_test\Debug\BankSystem_test.exe

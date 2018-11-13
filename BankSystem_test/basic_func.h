@@ -55,7 +55,6 @@ SInfo *SearchByNum(SInfo *head, int cnum) {
 		}
 		htemp = htemp->nextInfo;
 	}
-	printf("无法找到该用户！请检查卡号是否输入错误！\n");
 	return NULL;
 }
 SInfo *SearchById(SInfo *head,char id_card[]) {
@@ -136,7 +135,7 @@ void ShowAllInfo(SInfo *head) {
 		htemp = htemp->nextInfo;
 	}
 }
-int Deposit(SInfo *head, int card, long double money) {
+int DepositMoney(SInfo *head, int card, long double money) {
 	SInfo *temp; int  i;
 	temp = SearchByNum(head,card);
 	if (temp == NULL) return -1;
@@ -158,6 +157,7 @@ int DrawMoney(SInfo *head,int card,char pwd[],long double money) {
 				if (temp->data.money[i]-money>=0) {
 					//getMoney(money);
 					temp->data.money[i] -= money;
+					printf("已成功取走钱款%lf",money);
 					return 1;
 				}
 				else {
