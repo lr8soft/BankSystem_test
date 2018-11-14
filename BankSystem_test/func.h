@@ -65,24 +65,19 @@ int CardCancellation(SInfo *head,char name[],int card,char pwd[]) {
 		return 0;
 	}
 }
-int AccountCancellation(SInfo *head,char name[],char pwd[],int card) {
+int AccountCancellation(SInfo *head,char name[],char pwd[],char id[]) {
 	int i, num,input;
 	SInfo *account;
-	account = SearchByNum(head, card);
+	account = SearchById(head,id);
 	if (account == NULL) {
-		printf("无法找到该卡号，操作失败！\n");
+		printf("无法找到该账户，操作失败！\n");
 		return -1;
 	}
-	for (i = 0; i < 3; i++) {
-		if (account->data.cardnum[i] == card) {
-			num = i;
-		}
-	}
 	if (strcmp(account->data.name, name) == 0 && strcmp(account->data.pwd, pwd) == 0) {
-		printf("确认注销该账号吗？所有信息将会删除，该操作为不可逆操作！ 输入1以确认删除:\n", card);
+		printf("确认注销该账号吗？所有信息将会删除，该操作为不可逆操作！ 输入1以确认删除:\n");
 		scanf("%d", &input);
 		if (input == 1) {
-			DeleteAccount(head,card);
+			DeleteAccount(head,id);
 			printf("操作成功，信息已删除\n");
 			return 1;
 		}
@@ -127,7 +122,7 @@ SInfo *CreateAccount(SInfo *head, char name[], char pwd[], char id_card[]) {
 	PData info;
 	if (temp != NULL) {
 		printf("该身份id卡已经注册了账户，注册失败！\n");
-		return NULL;
+		return head;
 	}
 	strcpy(info.id_card, id_card);
 	strcpy(info.name, name);
@@ -135,6 +130,7 @@ SInfo *CreateAccount(SInfo *head, char name[], char pwd[], char id_card[]) {
 	htemp = AddToList(head, info);
 	if (htemp != NULL) {
 		head = htemp;
+		printf("注册成功！\n");
 		return head;
 	}
 	else {

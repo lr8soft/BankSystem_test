@@ -66,7 +66,7 @@ SInfo *SearchById(SInfo *head,char id_card[]) {
 		}
 		htemp = htemp->nextInfo;
 	}
-	printf("无法根据Id卡信息得到数据！请检查是否Id号输入有误！\n");
+//	printf("无法根据Id卡信息得到数据！请检查是否Id号输入有误！\n");
 	return NULL;
 }
 SearchInfo *SearchByName(SInfo *head,char name[]) {//记得free()
@@ -89,17 +89,15 @@ SearchInfo *SearchByName(SInfo *head,char name[]) {//记得free()
 		return &sinfo;
 	}
 }
-int DeleteAccount(SInfo *head, int cardnum) {
+int DeleteAccount(SInfo *head, char id[]) {
 	SInfo *htemp,*node; int i = 0;
 	htemp = head;
 	node = head;
 	while (htemp) {
-		for (i = 0; i < 3;i++){
-			if (htemp->data.cardnum[i]==cardnum) {
-				node->nextInfo = htemp->nextInfo;
-				free(htemp);
-				return 1;
-			}
+		if (strcmp(htemp->data.id_card,id)==0) {
+			node->nextInfo = htemp->nextInfo;
+			free(htemp);
+			return 1;
 		}
 		node = htemp;
 		htemp = htemp->nextInfo;
