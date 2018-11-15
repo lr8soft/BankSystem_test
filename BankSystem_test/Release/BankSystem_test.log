@@ -1,0 +1,10 @@
+﻿  pch.cpp
+  BankSystem_test.cpp
+d:\bank_system\banksystem_test\banksystem_test\func.h(69): warning C4101: “i”: 未引用的局部变量
+d:\bank_system\banksystem_test\banksystem_test\func.h(69): warning C4101: “num”: 未引用的局部变量
+d:\bank_system\banksystem_test\banksystem_test\func.h(144): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  正在生成代码
+d:\bank_system\banksystem_test\banksystem_test\basic_func.h(169): warning C4715: “DrawMoney”: 不是所有的控件路径都返回值
+  All 36 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  BankSystem_test.vcxproj -> D:\bank_system\BankSystem_test\Release\BankSystem_test.exe

@@ -1,5 +1,4 @@
-﻿  pch.cpp
-  BankSystem_test.cpp
+﻿  BankSystem_test.cpp
 d:\bank_system\banksystem_test\banksystem_test\func.h(69): warning C4101: “i”: 未引用的局部变量
 d:\bank_system\banksystem_test\banksystem_test\func.h(69): warning C4101: “num”: 未引用的局部变量
 d:\bank_system\banksystem_test\banksystem_test\func.h(144): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
