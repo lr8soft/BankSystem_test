@@ -66,10 +66,9 @@ SInfo *SearchById(SInfo *head,char id_card[]) {
 		}
 		htemp = htemp->nextInfo;
 	}
-//	printf("无法根据Id卡信息得到数据！请检查是否Id号输入有误！\n");
 	return NULL;
 }
-SearchInfo *SearchByName(SInfo *head,char name[]) {//记得free()
+SearchInfo *SearchByName(SInfo *head,char name[]) {
 	int len = 0;
 	SInfo *htemp;
 	SearchInfo sinfo;
